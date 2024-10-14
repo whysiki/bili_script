@@ -46,8 +46,12 @@ const main = async () => {
       continue;
     } else {
       console.log(`Unfollowing ${uname}...`);
-      const res = await modify_follow(mid, "unfollow");
-      console.log(res);
+      try {
+        const res = await modify_follow(mid, "unfollow");
+        console.log(res);
+      } catch (e) {
+        console.log(e);
+      }
     }
   }
 
